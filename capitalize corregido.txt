@@ -14,18 +14,18 @@
 
 public string capitalize(string sentence)
 {
-  string cadena;
+  string cadena="";
   string[] str = sentence.Split(' '); //separa la sentencia por cada espacio  y guarda las palabras en un arreglo
   
-  for(int i=0;i< str.lenght;i++)
+  for(int i=0;i< str.Lenght;i++)
   {
-    string cad;
+    string cad="";
     char aux;
-    for(int j=0;j<str[i].lenght;j++ ) //convierte cada inicio de palabra en mayuscula
+    for(int j=0;j<str[i].Lenght;j++ ) //convierte cada inicio de palabra en mayuscula
     {
-      aux = str[j];
-    	if(str[j].element == 0)
-      	 aux = toupper(str[j]);
+      aux = str[i].ElementAt(j);
+    	if(j == 0)
+      	 aux = Char.ToUpper(str[i].ElementAt(j));
            
       cad+=aux;
     }
@@ -37,17 +37,17 @@ public string capitalize(string sentence)
 }
 
 
-public string capitalize(string sentence) //usando funcion "Replace" con un ciclo.
+public string capitalize(string sentence) //usando funcion "Replace" con un ciclo
 {
-  string cadena;
+  string cadena="";
   string[] str = sentence.Split(' '); 
   char inicial;
   
-  for(int i=0;i< str.lenght;i++)
+  for(int i=0;i< str.Lenght;i++)
   {
-    inicial = str[i].element(0);
+    inicial = str[i].ElementAt(0);
     
-    cadena = cadena + " " + str[i].Replace(inicial,toupper(incial));
+    cadena = cadena + " " + str[i].Replace(inicial,Char.ToUpper(incial));
   }
   
   return cadena;
@@ -71,16 +71,22 @@ public int reverseInt(int n) {
   string valCad = System.Convert.ToString(n);
   string valNuevo= "";
   
-  if(valCad.element(0) == '-')
+  if(valCad.ElementAt(0) == '-')
       valNuevo+='-';
   
-  for(int i=valCad.length-1;i>=0;i--)
+  for(int i=valCad.Length-1;i>=0;i--)
   {
-    if(valCad.element(i) != '0' && valCad.element(i) != '-')
-    	valNuevo+=valCad.element(i);
+    if(valCad.ElementAt(i) != '0' && valCad.ElementAt(i) != '-')
+    	valNuevo+=valCad.ElementAt(i);
   }
   
 	int valFinal = Int32.Parse(valNuevo);
   return valFinal;
 
 }
+
+
+
+
+
+
